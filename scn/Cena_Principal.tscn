@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://xgkfebyydtd2"]
+[gd_scene load_steps=8 format=3 uid="uid://xgkfebyydtd2"]
 
 [ext_resource type="PackedScene" uid="uid://r1tbdx75oxrk" path="res://scn/Portal.tscn" id="1"]
+[ext_resource type="Script" path="res://scn/root.gd" id="1_ksbxm"]
 [ext_resource type="Script" path="res://scn/Cena_Principal.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cl1lgfswjswld" path="res://img/bg.jpg" id="3"]
 [ext_resource type="FontFile" uid="uid://d343i4w6vhwi5" path="res://fnt/pixel-dead-italic.ttf" id="4"]
@@ -3909,10 +3910,52 @@ cache/0/61/0/kerning_overrides/59/0 = Vector2(0, 0)
 cache/0/61/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/61/0/kerning_overrides/61/0 = Vector2(0, 0)
 
-[node name="Cena_Principal" type="Node2D"]
-script = ExtResource("2")
+[node name="root" type="Node2D"]
+script = ExtResource("1_ksbxm")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Cena_Principal" type="Node2D" parent="."]
+script = ExtResource("2")
+
+[node name="TextureRect" type="TextureRect" parent="Cena_Principal"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3923,12 +3966,13 @@ grow_vertical = 2
 scale = Vector2(1.12133, 1.07999)
 texture = ExtResource("3")
 
-[node name="Portal" parent="." instance=ExtResource("1")]
+[node name="Portal" parent="Cena_Principal" instance=ExtResource("1")]
 position = Vector2(576, 622)
+scale = Vector2(1, 1)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Cena_Principal"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Cena_Principal"]
 offset_left = 34.0
 offset_top = 23.0
 offset_right = 155.0
@@ -3943,9 +3987,9 @@ theme_override_fonts/font = SubResource("1")
 theme_override_font_sizes/font_size = 60
 text = "0"
 
-[node name="ambient" type="AudioStreamPlayer2D" parent="."]
+[node name="ambient" type="AudioStreamPlayer2D" parent="Cena_Principal"]
 stream = ExtResource("5")
 
 [connection signal="draw" from="." to="." method="_on_Cena_Principal_draw"]
-[connection signal="resgatou_um_animal_com_o_portal" from="Portal" to="." method="_on_Portal_resgatou_um_animal_com_o_portal"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="resgatou_um_animal_com_o_portal" from="Cena_Principal/Portal" to="." method="_on_Portal_resgatou_um_animal_com_o_portal"]
+[connection signal="timeout" from="Cena_Principal/Timer" to="." method="_on_Timer_timeout"]

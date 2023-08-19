@@ -1,2 +1,8 @@
 res://default_env.tres
 res://scn/Cena_Principal.tscn
+res://scn/MENU.tscn
+res://scn/MENU.gd
+res://scn/Cena_pontuacao.tscn
+res://scn/Cena_pontuacao.gd
+res://scn/game_scn/Cena_Principal.tscn
+res://scn/root.gd
