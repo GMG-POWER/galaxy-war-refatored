@@ -32,7 +32,6 @@ func envelopar():
 
 
 func _on_Area2D_body_entered(body):
-	#$AnimalSalvo.play()
-	#emit_signal("resgatou_um_animal_com_o_portal")
+	$AnimalSalvo.play()
+	emit_signal("resgatou_um_animal_com_o_portal")
 	body.queue_free()
-

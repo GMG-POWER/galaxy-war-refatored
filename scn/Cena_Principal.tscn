@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://xgkfebyydtd2"]
+[gd_scene load_steps=8 format=3 uid="uid://xgkfebyydtd2"]
 
 [ext_resource type="PackedScene" uid="uid://r1tbdx75oxrk" path="res://scn/Portal.tscn" id="1"]
 [ext_resource type="Script" path="res://scn/root.gd" id="1_ksbxm"]
 [ext_resource type="Script" path="res://scn/Cena_Principal.gd" id="2"]
-[ext_resource type="Script" path="res://scn/Control.gd" id="2_mgimq"]
 [ext_resource type="Texture2D" uid="uid://cl1lgfswjswld" path="res://img/bg.jpg" id="3"]
-[ext_resource type="Texture2D" uid="uid://bey4n7omj2720" path="res://img/menu_bg.png" id="3_4vrfq"]
 [ext_resource type="FontFile" uid="uid://d343i4w6vhwi5" path="res://fnt/pixel-dead-italic.ttf" id="4"]
+[ext_resource type="AudioStream" uid="uid://cy0m7r68qh8qs" path="res://snd/ambient.wav" id="5"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("4")])
@@ -3917,43 +3916,40 @@ script = ExtResource("1_ksbxm")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("2_mgimq")
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("3_4vrfq")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Control/HBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="Control/HBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
-offset_bottom = 59.0
+offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button3" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Cena_Principal" type="Node2D" parent="."]
@@ -3972,6 +3968,7 @@ texture = ExtResource("3")
 
 [node name="Portal" parent="Cena_Principal" instance=ExtResource("1")]
 position = Vector2(576, 622)
+scale = Vector2(1, 1)
 
 [node name="Timer" type="Timer" parent="Cena_Principal"]
 
@@ -3990,4 +3987,9 @@ theme_override_fonts/font = SubResource("1")
 theme_override_font_sizes/font_size = 60
 text = "0"
 
+[node name="ambient" type="AudioStreamPlayer2D" parent="Cena_Principal"]
+stream = ExtResource("5")
+
+[connection signal="draw" from="." to="." method="_on_Cena_Principal_draw"]
+[connection signal="resgatou_um_animal_com_o_portal" from="Cena_Principal/Portal" to="." method="_on_Portal_resgatou_um_animal_com_o_portal"]
 [connection signal="timeout" from="Cena_Principal/Timer" to="." method="_on_Timer_timeout"]

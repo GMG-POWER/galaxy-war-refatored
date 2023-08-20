@@ -52,7 +52,3 @@ func _on_Portal_resgatou_um_animal_com_o_portal():
 
 func _on_Cena_Principal_draw():
 	$ambient.play()
-
-
-func _on_draw():
-	pass # Replace with function body.
