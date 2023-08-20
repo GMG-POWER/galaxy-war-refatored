@@ -104,4 +104,5 @@ flat = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_jogar_dificuldade" to="." method="_on_jogar_dificuldade_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_casual" to="." method="_on__casual_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_voltar" to="." method="_on__voltar_pressed"]

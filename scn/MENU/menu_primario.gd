@@ -5,11 +5,9 @@ extends Node2D
 func _ready():
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
-
 
 
 func _on_jogar_dificuldade_pressed():
@@ -25,7 +23,7 @@ func _on_jogar_dificuldade_pressed():
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_casual").visible = 1
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_voltar").position = Vector2(0.0,203.0)
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_voltar").visible = 1
-	get_node("HBoxContainer/Label").text = "teste"
+	#get_node("HBoxContainer/Label").text = "teste"
 
 func _on__voltar_pressed():
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_jogar_dificuldade").visible = 1
@@ -35,20 +33,21 @@ func _on__voltar_pressed():
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_historia").visible = 0
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_casual").visible = 0
 	get_node("VBoxContainer/HBoxContainer/VBoxContainer_/_voltar").visible = 0
-	
+
+func _on__casual_pressed():
+	get_tree().change_scene_to_file("res://scn/jogo/Cena_Principal.tscn")
+
+
 func _button_pressed():
 	print("Hello world!")
 	#get_tree().change_scene_to_file("res://scn/MENU/modo_jogo/modo_jogo.tscn")
 
-
-
-
 func _on_potuações_pressed():
-	get_tree().change_scene_to_file("res://MENU/control.tscn")
-
-
-
+	#get_tree().change_scene_to_file("res://MENU/control.tscn")
+	pass
 
 
 func _on_sair_pressed():
 	get_tree().quit()
+
+
