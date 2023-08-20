@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Galaxy War Refatored"
-run/main_scene="res://scn/Cena_Principal.tscn"
+run/main_scene="res://scn/MENU/menu_primario.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.svg"
 

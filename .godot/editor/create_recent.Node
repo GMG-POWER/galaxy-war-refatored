@@ -1,7 +1,1 @@
-Button
-VBoxContainer
-Label
-HBoxContainer
 TextureRect
-Control
-Node2D
