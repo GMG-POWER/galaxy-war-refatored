@@ -1,3 +1,6 @@
 res://default_env.tres
 res://scn/MENU/menu_primario.tscn
 res://scn/Cena_Principal.tscn
+res://scn/MENU/meu_primario.gd
+res://scn/MENU/menu_primario.gd
+res://scn/MENU/modo_jogo/modo_jogo.tscn
