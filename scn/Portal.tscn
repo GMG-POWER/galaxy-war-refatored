@@ -26,7 +26,6 @@ shape = SubResource("1")
 
 [node name="Vortex" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2")
-autoplay = true
 
 [node name="AnimalSalvo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4")
