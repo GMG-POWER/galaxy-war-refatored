@@ -38,7 +38,6 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 4.0
-focus_mode = 0
 theme_override_fonts/font = ExtResource("3_u2auo")
 theme_override_font_sizes/font_size = 30
 text = "JOGAR"
@@ -52,37 +51,11 @@ text = "PONTUACAO"
 
 [node name="_sair" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer_"]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 2
 size_flags_stretch_ratio = 4.39
 theme_override_fonts/font = ExtResource("3_u2auo")
 theme_override_font_sizes/font_size = 30
 text = "SAIR"
-
-[node name="_historia" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer_"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 10
-size_flags_stretch_ratio = 4.0
-theme_override_fonts/font = ExtResource("3_u2auo")
-theme_override_font_sizes/font_size = 30
-text = "HISTORIA"
-
-[node name="_casual" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer_"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_fonts/font = ExtResource("3_u2auo")
-theme_override_font_sizes/font_size = 30
-text = "CASUAL"
-
-[node name="_voltar" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer_"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 10
-size_flags_stretch_ratio = 4.39
-theme_override_fonts/font = ExtResource("3_u2auo")
-theme_override_font_sizes/font_size = 30
-text = "VOLTAR"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 510.0
@@ -103,5 +76,3 @@ text = "2G+"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_jogar_dificuldade" to="." method="_on_jogar_dificuldade_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_sair" to="." method="_on_sair_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer_/_voltar" to="." method="_on__voltar_pressed"]
