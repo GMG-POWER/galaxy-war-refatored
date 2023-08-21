@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://r1tbdx75oxrk"]
 
-[ext_resource type="Script" path="res://scn/Portal.gd" id="1"]
+[ext_resource type="Script" path="res://scn/jogo/nave/nave.gd" id="1_svcdv"]
 [ext_resource type="AudioStream" uid="uid://bi3h304h42hld" path="res://snd/Portal.wav" id="2"]
 [ext_resource type="Texture2D" uid="uid://cth3dxi7sckxb" path="res://img/teleport.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://dj6o85rg0g5pm" path="res://snd/AnimalSalvo.wav" id="4"]
@@ -10,7 +10,7 @@ radius = 70.8361
 height = 222.324
 
 [node name="Portal" type="Node2D"]
-script = ExtResource("1")
+script = ExtResource("1_svcdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -112.5)

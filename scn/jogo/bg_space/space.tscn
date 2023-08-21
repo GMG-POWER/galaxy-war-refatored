@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8m712xov3vrw"]
+
+[ext_resource type="Shader" path="res://scn/jogo/bg_space/space.gdshader" id="1_5n37b"]
+[ext_resource type="Texture2D" uid="uid://bey4n7omj2720" path="res://img/menu_bg.png" id="2_ugldb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx1uv"]
+shader = ExtResource("1_5n37b")
+shader_parameter/vel = 0.2
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mx1uv")
+position = Vector2(583.5, 331)
+scale = Vector2(1.62775, 1.83696)
+texture = ExtResource("2_ugldb")

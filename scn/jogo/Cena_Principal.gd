@@ -3,48 +3,39 @@ extends Node2D
 var gerador = RandomNumberGenerator.new()
 var pontos = 0
 
-var instRaposa = preload("res://scn/Raposa.tscn")
-var instFrog = preload("res://scn/Frog.tscn")
-var instPassaro = preload("res://scn/Passaro.tscn")
-var instVaca = preload("res://scn/Vaca.tscn")
-var instCat = preload("res://scn/Cat.tscn")
-var instCoelho = preload("res://scn/Coelho.tscn")
-var instDog = preload("res://scn/Dog.tscn")
+var instNave = preload("res://scn/jogo/nave/nave.tscn")
+
+var instSpace = preload("res://scn/jogo/bg_space/space.tscn")
+
 
 func _ready():
 	$Timer.start()
+	$_timer_space.start()
 	gerador.randomize()
 	
-func criarAnimais():
+func criarAsteroid():
 	var instance
-	var tmp = gerador.randi_range(0, 6)
-	
-	match tmp:
-		0:
-			instance = instRaposa.instantiate()
-		1:
-			instance = instFrog.instantiate()
-		2:	
-			instance = instPassaro.instantiate()
-		3:
-			instance = instVaca.instantiate()
-		4:
-			instance = instCoelho.instantiate()
-		5:
-			instance = instCat.instantiate()
-		6:
-			instance = instDog.instantiate()
+	instance = instNave.instantiate()
 			
-	instance.position.y = -16
-	instance.position.x = gerador.randf_range(26,1000)
+	instance.position.y = 0
+	instance.position.x = 500
 	instance.rotation = gerador.randf_range(-1.5,1.5)
 	add_child(instance)
 
+func criarSpace():
+	var instance_bg
+	instance_bg = instSpace.instantiate()
+	instance_bg.position.y = 0
+	instance_bg.position.x = 560
+	add_child(instance_bg)
+
 func _on_Timer_timeout():
-	criarAnimais()
+	criarAsteroid()
 	$Timer.start()
 	
-
+func _on__timer_space_timeout():
+	criarSpace()
+	$_timer_space.start()
 
 func _on_Portal_resgatou_um_animal_com_o_portal():
 	pontos += 1
@@ -52,3 +43,5 @@ func _on_Portal_resgatou_um_animal_com_o_portal():
 
 func _on_Cena_Principal_draw():
 	$ambient.play()
+
+

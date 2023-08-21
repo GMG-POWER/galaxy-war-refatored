@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://xgkfebyydtd2"]
+[gd_scene load_steps=8 format=3 uid="uid://xgkfebyydtd2"]
 
 [ext_resource type="PackedScene" uid="uid://r1tbdx75oxrk" path="res://scn/jogo/nave/nave.tscn" id="1"]
 [ext_resource type="Script" path="res://scn/jogo/Cena_Principal.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b8m712xov3vrw" path="res://scn/jogo/bg_space/space.tscn" id="2_mxmp0"]
+[ext_resource type="Texture2D" uid="uid://cl1lgfswjswld" path="res://img/bg.jpg" id="3"]
 [ext_resource type="FontFile" uid="uid://d343i4w6vhwi5" path="res://fnt/pixel-dead-italic.ttf" id="4"]
 [ext_resource type="AudioStream" uid="uid://cy0m7r68qh8qs" path="res://snd/ambient.wav" id="5"]
 
@@ -3914,6 +3915,17 @@ script = ExtResource("2")
 
 [node name="_pace_bg" parent="." instance=ExtResource("2_mxmp0")]
 top_level = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.12133, 1.07999)
+texture = ExtResource("3")
 
 [node name="Portal" parent="." instance=ExtResource("1")]
 top_level = true
