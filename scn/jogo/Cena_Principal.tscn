@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xgkfebyydtd2"]
+[gd_scene load_steps=8 format=3 uid="uid://xgkfebyydtd2"]
 
-[ext_resource type="PackedScene" uid="uid://r1tbdx75oxrk" path="res://scn/jogo/nave/nave.tscn" id="1"]
 [ext_resource type="Script" path="res://scn/jogo/Cena_Principal.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b8m712xov3vrw" path="res://scn/jogo/bg_space/space.tscn" id="2_mxmp0"]
 [ext_resource type="FontFile" uid="uid://d343i4w6vhwi5" path="res://fnt/pixel-dead-italic.ttf" id="4"]
+[ext_resource type="PackedScene" uid="uid://cfpbxd1obwwic" path="res://scn/jogo/nave/_nave.tscn" id="4_23k85"]
 [ext_resource type="AudioStream" uid="uid://cy0m7r68qh8qs" path="res://snd/ambient.wav" id="5"]
+[ext_resource type="FontFile" uid="uid://dk2cel2al26l7" path="res://fnt/QuinqueFive.ttf" id="6_1qwt3"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("4")])
@@ -3913,19 +3914,27 @@ cache/0/61/0/kerning_overrides/61/0 = Vector2(0, 0)
 script = ExtResource("2")
 
 [node name="_pace_bg" parent="." instance=ExtResource("2_mxmp0")]
-top_level = true
+z_index = -1
 
-[node name="Portal" parent="." instance=ExtResource("1")]
-top_level = true
-position = Vector2(576, 622)
+[node name="Vector" parent="." instance=ExtResource("4_23k85")]
+position = Vector2(580, 581)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 936.0
+offset_top = 26.0
+offset_right = 1157.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 30
+text = "PONTUIACAO:"
+
 [node name="Label" type="Label" parent="."]
-offset_left = 34.0
-offset_top = 23.0
-offset_right = 155.0
-offset_bottom = 87.0
+offset_left = 1009.0
+offset_top = 71.0
+offset_right = 1130.0
+offset_bottom = 135.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
@@ -3939,10 +3948,39 @@ text = "0"
 [node name="ambient" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5")
 
-[node name="_timer_space" type="Timer" parent="."]
-wait_time = 1.5
+[node name="Label2" type="Label" parent="."]
+offset_left = 68.0
+offset_top = 99.0
+offset_right = 266.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("6_1qwt3")
+theme_override_font_sizes/font_size = 30
+text = "TEXTO"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 45.0
+offset_top = 435.0
+offset_right = 294.0
+offset_bottom = 476.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 512.0
+offset_right = 296.0
+offset_bottom = 557.0
+theme_override_fonts/font = ExtResource("6_1qwt3")
+text = "ENVIAR"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 22.0
+offset_right = 322.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("6_1qwt3")
+theme_override_font_sizes/font_size = 30
+text = "PALAVRA:"
 
 [connection signal="draw" from="." to="." method="_on_Cena_Principal_draw"]
-[connection signal="resgatou_um_animal_com_o_portal" from="Portal" to="." method="_on_Portal_resgatou_um_animal_com_o_portal"]
+[connection signal="resgatou_um_animal_com_o_portal" from="Vector" to="." method="__on_vector_resgatou_um_animal_com_o_portal"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="_timer_space" to="." method="_on__timer_space_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -4,13 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cfoetihrojoka" path="res://img/dog.png" id="2_6w4bo"]
 
 [sub_resource type="CircleShape2D" id="1"]
-radius = 61.4262
+radius = 74.0
 
 [node name="Raposa" type="RigidBody2D"]
+inertia = 1.0
+gravity_scale = 0.1
 script = ExtResource("1_ke3p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -74)
 shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -75)
 texture = ExtResource("2_6w4bo")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgqh2qe1e1sen"]
+
+[ext_resource type="Texture2D" uid="uid://b4umsrdv2o2ij" path="res://img/fire.png" id="2_57v6r"]
+
+[sub_resource type="GDScript" id="GDScript_pkng4"]
+script/source = "extends RigidBody2D
+
+func _on_area_2d_area_entered(area):
+	emit_signal(\"_destruiu_meteoro\")
+"
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = -1.0
+script = SubResource("GDScript_pkng4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_57v6r")

@@ -1,8 +1,11 @@
 res://default_env.tres
-res://scn/jogo/bg_space/space.tscn
-res://scn/jogo/Cena_Principal.tscn
+res://scn/jogo/nave/_nave.tscn
 res://scn/jogo/bg_space/space.gdshader
-res://scn/jogo/nave/Portal.tscn
 res://scn/jogo/objetos/meteoro.tscn
 res://scn/jogo/nave/nave.tscn
+res://scn/jogo/Cena_Principal.tscn
+res://scn/jogo/nave/_nave.gd
 res://scn/jogo/Cena_Principal.gd
+res://scn/jogo/nave/laser.gd
+res://scn/jogo/nave/lazer.tscn
+res://scn/jogo/nave/lazer.gd
