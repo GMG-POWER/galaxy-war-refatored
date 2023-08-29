@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://6bu4lwwbihxe"]
 
 [ext_resource type="Script" path="res://scn/jogo/objetos/meteoro.gd" id="1_ke3p2"]
-[ext_resource type="Texture2D" uid="uid://cfoetihrojoka" path="res://img/dog.png" id="2_6w4bo"]
+[ext_resource type="Texture2D" uid="uid://cufl0x1wy0wcc" path="res://img/asteroide.png" id="2_velc7"]
 
 [sub_resource type="CircleShape2D" id="1"]
-radius = 74.0
+radius = 55.0
 
-[node name="Raposa" type="RigidBody2D"]
+[node name="Meteoro" type="RigidBody2D"]
+mass = 0.5
 inertia = 1.0
-gravity_scale = 0.1
+gravity_scale = 0.07
 script = ExtResource("1_ke3p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,5 +17,9 @@ position = Vector2(-3, -74)
 shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -75)
-texture = ExtResource("2_6w4bo")
+texture_filter = 1
+position = Vector2(-1, -71)
+scale = Vector2(3, 3)
+texture = ExtResource("2_velc7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
-res://scn/jogo/bg_space/space.tscn::b62cc819f6d6a86f0d7903f1e46d30b7::1692577985::res://.godot/exported/133200997/export-5295c903ff3d16e9081b9b3ce3deff96-space.scn
-res://scn/jogo/nave/nave.tscn::7e865cc9a93a0f724e3822a9acdacf2a::1692577985::res://.godot/exported/133200997/export-f18b6485284722f75e534b676a6bd868-nave.scn
-res://scn/jogo/objetos/meteoro.tscn::c48753e6ae30506b5b441fbe61f4b35d::1692577985::res://.godot/exported/133200997/export-05a14fc138e0341bee3c5aff91d365a0-meteoro.scn
-res://scn/jogo/Cena_Principal.tscn::20a151df2acfa4d5f2876575435f3592::1692594503::res://.godot/exported/133200997/export-2d88950d2e5f0a74d045b177a9828b95-Cena_Principal.scn
-res://scn/MENU/menu_primario.tscn::044900e17d727ef81f118c41cee81a89::1692573778::res://.godot/exported/133200997/export-d9612c991b163b66b053976926180aa3-menu_primario.scn
-res://default_env.tres::8d89f956dbef9f625379943647c12dba::1692594503::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://scn/jogo/bg_space/space.tscn::b62cc819f6d6a86f0d7903f1e46d30b7::1692595874::res://.godot/exported/133200997/export-5295c903ff3d16e9081b9b3ce3deff96-space.scn
+res://scn/jogo/nave/nave.tscn::ddad229a0bfdcad36158ebe698c27d04::1693273105::res://.godot/exported/133200997/export-f18b6485284722f75e534b676a6bd868-nave.scn
+res://scn/jogo/objetos/meteoro.tscn::dfcaffcd7a9df9ccf2289036e5a5aa8c::1693269777::res://.godot/exported/133200997/export-05a14fc138e0341bee3c5aff91d365a0-meteoro.scn
+res://scn/jogo/Cena_Principal.tscn::63052f68bfbb47d1f5a8090af45bba84::1693279355::res://.godot/exported/133200997/export-2d88950d2e5f0a74d045b177a9828b95-Cena_Principal.scn
+res://scn/MENU/menu_primario.tscn::044900e17d727ef81f118c41cee81a89::1693250141::res://.godot/exported/133200997/export-d9612c991b163b66b053976926180aa3-menu_primario.scn
+res://default_env.tres::8d89f956dbef9f625379943647c12dba::1693279355::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
 res://new_dynamicfont.tres::22f46452fe926ec9a2055833404b93e6::1692474448::res://.godot/exported/133200997/export-29f7f631b67a787b69415ccc19c59390-new_dynamicfont.res
+res://scn/jogo/projetil/plasma_shot.tscn::4c0e96e4bdd49e66a4be80da6e07996d::1693278143::res://.godot/exported/133200997/export-19dec411df88ab8f47d74ebafc73a741-plasma_shot.scn

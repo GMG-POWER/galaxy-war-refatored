@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scn/jogo/Cena_Principal.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b8m712xov3vrw" path="res://scn/jogo/bg_space/space.tscn" id="2_mxmp0"]
 [ext_resource type="FontFile" uid="uid://d343i4w6vhwi5" path="res://fnt/pixel-dead-italic.ttf" id="4"]
-[ext_resource type="PackedScene" uid="uid://cfpbxd1obwwic" path="res://scn/jogo/nave/_nave.tscn" id="4_23k85"]
 [ext_resource type="AudioStream" uid="uid://cy0m7r68qh8qs" path="res://snd/ambient.wav" id="5"]
 [ext_resource type="FontFile" uid="uid://dk2cel2al26l7" path="res://fnt/QuinqueFive.ttf" id="6_1qwt3"]
+[ext_resource type="PackedScene" uid="uid://c3b1hnam78h1f" path="res://scn/jogo/nave/nave.tscn" id="6_181oh"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("4")])
@@ -3913,11 +3913,8 @@ cache/0/61/0/kerning_overrides/61/0 = Vector2(0, 0)
 [node name="Cena_Principal" type="Node2D"]
 script = ExtResource("2")
 
-[node name="_pace_bg" parent="." instance=ExtResource("2_mxmp0")]
-z_index = -1
-
-[node name="Vector" parent="." instance=ExtResource("4_23k85")]
-position = Vector2(580, 581)
+[node name="nave" parent="." instance=ExtResource("6_181oh")]
+position = Vector2(579, 576)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -3948,11 +3945,11 @@ text = "0"
 [node name="ambient" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5")
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 68.0
-offset_top = 99.0
-offset_right = 266.0
-offset_bottom = 142.0
+[node name="TextoOriginal" type="TextEdit" parent="."]
+offset_left = 45.0
+offset_top = 89.0
+offset_right = 356.0
+offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("6_1qwt3")
 theme_override_font_sizes/font_size = 30
 text = "TEXTO"
@@ -3971,6 +3968,14 @@ offset_bottom = 557.0
 theme_override_fonts/font = ExtResource("6_1qwt3")
 text = "ENVIAR"
 
+[node name="BTN_editar_texto" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 166.0
+offset_right = 323.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("6_1qwt3")
+text = "Editar"
+
 [node name="Label4" type="Label" parent="."]
 offset_left = 34.0
 offset_top = 22.0
@@ -3980,7 +3985,11 @@ theme_override_fonts/font = ExtResource("6_1qwt3")
 theme_override_font_sizes/font_size = 30
 text = "PALAVRA:"
 
+[node name="_pace_bg" parent="." instance=ExtResource("2_mxmp0")]
+z_index = -1
+
 [connection signal="draw" from="." to="." method="_on_Cena_Principal_draw"]
-[connection signal="resgatou_um_animal_com_o_portal" from="Vector" to="." method="__on_vector_resgatou_um_animal_com_o_portal"]
+[connection signal="meteoro_atingi_nave" from="nave" to="." method="_on_nave_meteoro_atingi_nave"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BTN_editar_texto" to="." method="_on_btn_editar_texto_pressed"]
